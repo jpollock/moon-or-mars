@@ -1,0 +1,23 @@
+{
+    "apiVersion": 2,
+    "name": "moon-or-mars/voting-block",
+    "title": "Moon or Mars Poll",
+    "category": "widgets",
+    "icon": "chart-pie",
+    "description": "Add a poll asking users if they would rather go to the Moon or Mars.",
+    "keywords": ["poll", "vote", "moon", "mars", "space"],
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"]
+    },
+    "textdomain": "moon-or-mars",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./style.css",
+    "render": "file:./render.php",
+    "viewScript": "file:./view.js",
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

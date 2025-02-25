@@ -1,0 +1,357 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+/* General Admin Styles */
+.moon-or-mars-admin {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.moon-or-mars-admin-header {
+    background: linear-gradient(135deg, #0B0B3B 0%, #4B0082 100%);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.moon-or-mars-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(1px 1px at 25px 5px, white, rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 50px 25px, white, rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 125px 20px, white, rgba(255, 255, 255, 0)),
+        radial-gradient(1.5px 1.5px at 50px 75px, white, rgba(255, 255, 255, 0)),
+        radial-gradient(2px 2px at 15px 125px, white, rgba(255, 255, 255, 0)),
+        radial-gradient(2.5px 2.5px at 110px 80px, white, rgba(255, 255, 255, 0));
+    z-index: 0;
+}
+
+.moon-or-mars-logo {
+    position: relative;
+    z-index: 1;
+}
+
+.moon-or-mars-logo h2 {
+    font-size: 28px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.moon-or-mars-logo p {
+    font-size: 16px;
+    margin: 5px 0 0;
+    opacity: 0.8;
+}
+
+.moon-or-mars-admin-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .moon-or-mars-admin-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .moon-or-mars-admin-card:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+.moon-or-mars-admin-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.moon-or-mars-admin-card h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #0B0B3B;
+}
+
+/* Results Styles */
+.moon-or-mars-results {
+    margin-top: 20px;
+}
+
+.moon-or-mars-result-item {
+    margin-bottom: 20px;
+}
+
+.moon-or-mars-result-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.moon-or-mars-result-bar {
+    height: 30px;
+    background: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.moon-or-mars-result-progress {
+    height: 100%;
+    position: relative;
+    border-radius: 15px;
+    transition: width 1s ease-in-out;
+}
+
+.moon-or-mars-result-progress.moon {
+    background: linear-gradient(90deg, #D3D3D3 0%, #FFFFFF 100%);
+}
+
+.moon-or-mars-result-progress.mars {
+    background: linear-gradient(90deg, #CF3A24 0%, #FF6347 100%);
+}
+
+.moon-or-mars-result-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(1px 1px at 10px 10px, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 20px 20px, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 30px 5px, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)),
+        radial-gradient(1px 1px at 40px 15px, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.moon-or-mars-result-percentage {
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.moon-or-mars-result-count {
+    color: #666;
+    font-size: 14px;
+}
+
+.moon-or-mars-total-votes {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: right;
+}
+
+.moon-or-mars-total-votes span {
+    font-weight: bold;
+    color: #0B0B3B;
+}
+
+/* Settings Styles */
+.moon-or-mars-settings-form {
+    margin-top: 20px;
+}
+
+.moon-or-mars-setting-row {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.moon-or-mars-setting-label {
+    flex: 0 0 200px;
+    font-weight: bold;
+}
+
+.moon-or-mars-setting-field {
+    flex: 1;
+}
+
+.moon-or-mars-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.moon-or-mars-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.moon-or-mars-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.moon-or-mars-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.moon-or-mars-toggle input:checked + .moon-or-mars-toggle-slider {
+    background-color: #0B0B3B;
+}
+
+.moon-or-mars-toggle input:checked + .moon-or-mars-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.moon-or-mars-clear-votes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.moon-or-mars-clear-votes input {
+    flex: 1;
+    min-width: 200px;
+}
+
+#moon_or_mars_clear_votes_message {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Quick Links */
+.moon-or-mars-quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.moon-or-mars-quick-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.moon-or-mars-quick-link:hover {
+    background: #0B0B3B;
+    color: #fff;
+}
+
+.moon-or-mars-quick-link .dashicons {
+    margin-right: 8px;
+}
+
+/* How to Use */
+.moon-or-mars-how-to {
+    margin-top: 15px;
+}
+
+.moon-or-mars-how-to h3 {
+    margin: 20px 0 10px;
+    color: #0B0B3B;
+}
+
+.moon-or-mars-how-to code {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #f5f5f5;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    font-family: monospace;
+}
+
+/* Vote Data Styles */
+.moon-or-mars-segments-table-wrapper {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.moon-or-mars-segments-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.moon-or-mars-segments-table th,
+.moon-or-mars-segments-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.moon-or-mars-segments-table th {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+.moon-or-mars-segments-table tr:hover {
+    background: #f9f9f9;
+}
+
+/* Loading Styles */
+.moon-or-mars-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.moon-or-mars-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0B0B3B;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Block Preview */
+.moon-or-mars-block-preview {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+}

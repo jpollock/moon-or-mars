@@ -1,0 +1,11 @@
+This is a placeholder for the block-preview.png image.
+
+In a production environment, this would be a PNG image showing a preview of the Moon or Mars voting block in the Gutenberg editor.
+
+The image would display:
+1. A space-themed background with stars
+2. The title "Moon or Mars Poll"
+3. Two options showing the Moon and Mars with their respective SVG illustrations
+4. A simplified version of the voting interface
+
+For a real implementation, you would need to create this image using a graphics editor and save it as PNG format.
