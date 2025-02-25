@@ -28,11 +28,13 @@ if (!defined('WPINC')) {
 }
 
 /**
- * Current plugin version.
+ * Current plugin version and paths.
  */
 define('MOON_OR_MARS_VERSION', '1.0.0');
 define('MOON_OR_MARS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('MOON_OR_MARS_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('MOON_OR_MARS_PLUGIN_FILE', __FILE__);
+define('MOON_OR_MARS_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
 /**
  * The code that runs during plugin activation.
@@ -60,12 +62,21 @@ register_deactivation_hook(__FILE__, 'deactivate_moon_or_mars');
 require MOON_OR_MARS_PLUGIN_DIR . 'includes/class-moon-or-mars.php';
 
 /**
+ * Include the updater class.
+ */
+require_once MOON_OR_MARS_PLUGIN_DIR . 'includes/class-moon-or-mars-updater.php';
+
+/**
  * Begins execution of the plugin.
  *
  * @since    1.0.0
  */
 function run_moon_or_mars() {
+    // Initialize the main plugin class
     $plugin = new Moon_Or_Mars();
     $plugin->run();
+    
+    // Initialize the updater
+    $updater = new Moon_Or_Mars_Updater('moon-or-mars', MOON_OR_MARS_VERSION);
 }
 run_moon_or_mars();

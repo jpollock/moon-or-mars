@@ -18,9 +18,21 @@ The plugin features:
 
 ## Installation
 
-1. Upload the `moon-or-mars` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to the 'MoonOrMars' menu in your WordPress admin to configure settings
+### From GitHub (Recommended)
+
+1. Go to the [GitHub Releases page](https://github.com/jpollock/moon-or-mars/releases)
+2. Download the latest release ZIP file
+3. In your WordPress admin, go to Plugins > Add New > Upload Plugin
+4. Choose the downloaded ZIP file and click "Install Now"
+5. Activate the plugin through the 'Plugins' menu in WordPress
+6. Go to the 'MoonOrMars' menu in your WordPress admin to configure settings
+
+### Manual Installation
+
+1. Download the plugin ZIP file from the [GitHub repository](https://github.com/jpollock/moon-or-mars)
+2. Extract the ZIP file and upload the `moon-or-mars` folder to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in WordPress
+4. Go to the 'MoonOrMars' menu in your WordPress admin to configure settings
 
 ## Usage
 
@@ -98,9 +110,31 @@ Yes, you can clear votes at any time from the Settings page. The plugin will cre
 
 Yes, the plugin is fully responsive and works well on mobile devices, tablets, and desktops.
 
+## Updates
+
+The plugin includes an automatic update mechanism that checks for new releases on GitHub. When a new version is available, you'll see an update notification in your WordPress admin just like with plugins from the WordPress.org repository.
+
+### Automatic Updates
+
+1. When a new version is available, you'll see an update notification in your WordPress admin
+2. Click the "Update Now" link to update the plugin automatically
+3. The plugin will download and install the latest version from GitHub
+
+### Manual Updates
+
+If you prefer to update manually:
+
+1. Download the latest release from the [GitHub Releases page](https://github.com/jpollock/moon-or-mars/releases)
+2. Deactivate and delete the existing plugin (your data will be preserved)
+3. Install the new version as described in the Installation section
+
 ## Support
 
-If you encounter any issues or have questions about the plugin, please contact us at support@example.com.
+If you encounter any issues or have questions about the plugin, please open an issue on the [GitHub repository](https://github.com/jpollock/moon-or-mars/issues).
+
+## Development
+
+This plugin is open source and we welcome contributions! Please see the [CONTRIBUTING.md](https://github.com/jpollock/moon-or-mars/blob/main/CONTRIBUTING.md) file for guidelines on how to contribute.
 
 ## Credits
 
@@ -108,3 +142,4 @@ If you encounter any issues or have questions about the plugin, please contact u
 - Version: 1.0.0
 - License: GPL v2 or later
 - License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+- GitHub Repository: [https://github.com/jpollock/moon-or-mars](https://github.com/jpollock/moon-or-mars)
