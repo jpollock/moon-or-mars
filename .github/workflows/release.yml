@@ -1,0 +1,54 @@
+name: Release Plugin
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          tools: composer:v2
+          coverage: none
+
+      - name: PHP Lint
+        run: |
+          find . -type f -name "*.php" -not -path "./vendor/*" -print0 | xargs -0 -n1 php -l
+
+      - name: Get plugin version
+        id: plugin_version
+        run: |
+          VERSION=$(grep -oP "Version:\s*\K[0-9]+\.[0-9]+\.[0-9]+" wp-content/plugins/moon-or-mars/moon-or-mars.php)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create distribution ZIP
+        run: |
+          cd wp-content/plugins
+          # Create a clean directory for the distribution
+          mkdir -p moon-or-mars-dist/moon-or-mars
+          
+          # Copy all plugin files to the distribution directory, excluding development files
+          rsync -av --exclude='.git' --exclude='.github' --exclude='.gitignore' --exclude='.distignore' \
+            --exclude='node_modules' --exclude='vendor' --exclude='tests' --exclude='phpunit.xml' \
+            --exclude='composer.json' --exclude='composer.lock' --exclude='package.json' \
+            --exclude='package-lock.json' --exclude='CONTRIBUTING.md' \
+            moon-or-mars/ moon-or-mars-dist/moon-or-mars/
+          
+          # Create the ZIP file
+          cd moon-or-mars-dist
+          zip -r ../../moon-or-mars-${{ steps.plugin_version.outputs.version }}.zip moon-or-mars
+
+      - name: Upload ZIP to release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: moon-or-mars-${{ steps.plugin_version.outputs.version }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

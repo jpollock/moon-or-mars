@@ -1,0 +1,52 @@
+# Git
+.git
+.github
+.gitignore
+.gitattributes
+
+# Build tools
+.distignore
+.editorconfig
+.eslintrc
+.eslintignore
+.prettierrc
+.stylelintrc
+phpcs.xml
+phpunit.xml
+webpack.config.js
+babel.config.js
+postcss.config.js
+gulpfile.js
+Gruntfile.js
+
+# Dependency directories
+node_modules
+vendor
+bower_components
+
+# Package management
+package.json
+package-lock.json
+composer.json
+composer.lock
+yarn.lock
+
+# Development files
+tests
+phpunit
+.travis.yml
+.gitlab-ci.yml
+.circleci
+.github
+.env
+.env.*
+*.sql
+*.tar.gz
+*.zip
+
+# Documentation
+README.md
+CONTRIBUTING.md
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+LICENSE.md
